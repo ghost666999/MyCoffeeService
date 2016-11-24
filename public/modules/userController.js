@@ -1,0 +1,73 @@
+userControllers.controller('userController', [ '$scope', '$location',  '$http', function ($scope, $location, $http) {
+
+	console.log("userController loaded");
+	var self = this;
+
+	$scope.userResponse = [];
+	
+	$scope.totalUsers = [1, 2, 3, 4, 5, 6, 7];
+	
+	$scope.maxNoOfUsers = 0;
+	
+	$scope.maxChartHeight = 0;
+	
+	$scope.selectedChartType = "weekly";
+	
+	$scope.getBarHeight = function (noOfUsers) {
+		var height = noOfUsers/$scope.maxNoOfUsers * 95;		
+		console.log('height = ' + Math.round(height * 100) / 100);
+		return Math.round(height * 100) / 100;
+	},
+	
+	$scope.updateChart = function () {
+		console.log('update chart is called');
+		var chartType = $scope.selectedChartType;
+		var chartData = [];
+		
+		switch (chartType) {
+			case 'monthly':
+				chartData = $scope.userResponse.chartDataMonthly;
+				self.getMaxNo($scope.userResponse.chartDataMonthly);
+				break;
+			case 'yearly':
+				chartData = $scope.userResponse.chartDataYearly;
+				self.getMaxNo($scope.userResponse.chartDataYearly);
+				break;
+			default:
+				chartData = $scope.userResponse.chartDataWeekly;
+				self.getMaxNo($scope.userResponse.chartDataWeekly);
+				break;
+		}
+		
+		$scope.userResponse.chartData = chartData;
+	}
+	
+	
+	$http.get('responses/userengagments.json').then(function(response) {
+		debugger;
+	    var data = response.data;				
+		$scope.userResponse = data;
+		$scope.updateChart();
+		
+	});
+	
+	self.getMaxNo = function (chartData) {
+		var arr = [];
+		angular.forEach(chartData, function(obj, key) {
+			console.log(obj);
+			arr.push(obj.noOfUsers);	
+		}, this);		
+		
+		$scope.maxNoOfUsers = Math.max.apply( Math, arr );
+		console.log('arr=' + arr + '$scope.maxNoOfUsers: ' + $scope.maxNoOfUsers);			
+		return $scope.maxNoOfUsers;
+		
+	}
+	
+
+
+}]);
+
+
+
+	

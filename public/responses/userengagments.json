@@ -1,0 +1,43 @@
+{
+	"data": [
+		{
+			"timeSpan": "1",
+			"noOfUsers": 5,
+			"repeatUsers": 1,
+			"avgTime": "1.5"
+		},
+		{
+			"timeSpan": "7",
+			"noOfUsers": 15,
+			"repeatUsers": 5,
+			"avgTime": "2"
+		},
+		{
+			"timeSpan": "30",
+			"noOfUsers": 15,
+			"repeatUsers": 2,
+			"avgTime": "5"
+		}
+	],
+	"chartDataWeekly": [
+		{"legendX": "Monday", "noOfUsers": "3"},
+		{"legendX": "Tuesday", "noOfUsers": "5"},
+		{"legendX": "Wednesday", "noOfUsers": "7"},
+		{"legendX": "Thursday", "noOfUsers": "4"},
+		{"legendX": "Friday", "noOfUsers": "6"},
+		{"legendX": "Saturday", "noOfUsers": "2"},
+		{"legendX": "Sunday", "noOfUsers": "1"}		
+	],
+	"chartDataMonthly": [
+		{"legendX": "Week1", "noOfUsers": "10"},
+		{"legendX": "Week2", "noOfUsers": "28"},
+		{"legendX": "Week3", "noOfUsers": "45"},
+		{"legendX": "Week4", "noOfUsers": "60"}	
+	],
+	"chartDataYearly": [
+		{"legendX": "JAN", "noOfUsers": "100"},
+		{"legendX": "FEB", "noOfUsers": "280"},
+		{"legendX": "MAR", "noOfUsers": "459"},
+		{"legendX": "APR", "noOfUsers": "160"}	
+	]
+}

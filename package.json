@@ -1,22 +1,15 @@
 {
-  "name": "mycoffeeshop",
+  "name": "testapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "test app for news foundry",
   "main": "index.js",
   "scripts": {
-    "start": "http-server public -p 3000"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://stuartchiu12@github.com/ghost666999/MyCoffeeService.git"
-  },
-  "author": "",
+  "author": "Kishore",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ghost666999/MyCoffeeService/issues"
-  },
-  "homepage": "https://github.com/ghost666999/MyCoffeeService#readme",
-  "devDependencies": {
-    "http-server": "^0.9.0"
+  "dependencies": {
+    "express": "^4.14.0",
+    "moment": "^2.17.0"
   }
 }

@@ -1,0 +1,18 @@
+[
+  {
+	"id": "c1",
+	"shopId": "c1",
+	"name": "shop 1"
+  },
+  {
+	"id": "c2",
+	"shopId": "c2",
+	"name": "shop 2"
+  },
+  {
+	"id": "c3",
+	"shopId": "c3",
+	"name": "shop 3"
+  }
+
+]

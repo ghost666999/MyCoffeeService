@@ -11,11 +11,10 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 	
 	$scope.maxChartHeight = 0;
 	
-	$scope.selectedChartType = "weekly";
+	$scope.selectedChartType = "days";
 	
 	$scope.getBarHeight = function (noOfUsers) {
-		var height = noOfUsers/$scope.maxNoOfUsers * 95;		
-		console.log('height = ' + Math.round(height * 100) / 100);
+		var height = noOfUsers/$scope.maxNoOfUsers * 95;
 		return Math.round(height * 100) / 100;
 	},
 	
@@ -26,26 +25,26 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 		
 		switch (chartType) {
 			case 'monthly':
-				chartData = $scope.userResponse.chartDataMonthly;
-				self.getMaxNo($scope.userResponse.chartDataMonthly);
+                chartData = $scope.userResponse.chartDataMonthly;
 				break;
 			case 'yearly':
 				chartData = $scope.userResponse.chartDataYearly;
-				self.getMaxNo($scope.userResponse.chartDataYearly);
 				break;
+            case 'weekly':
+                chartData = $scope.userResponse.chartDataWeekly;
+                break;
 			default:
-				chartData = $scope.userResponse.chartDataWeekly;
-				self.getMaxNo($scope.userResponse.chartDataWeekly);
+				chartData = $scope.userResponse.chartDataDays;
 				break;
 		}
-		
+
+        self.getMaxNo(chartData);
 		$scope.userResponse.chartData = chartData;
 	}
 	
 	
 	$http.get('responses/userengagments.json').then(function(response) {
-		debugger;
-	    var data = response.data;				
+	    var data = response.data;
 		$scope.userResponse = data;
 		$scope.updateChart();
 		
@@ -59,11 +58,9 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 		}, this);		
 		
 		$scope.maxNoOfUsers = Math.max.apply( Math, arr );
-		console.log('arr=' + arr + '$scope.maxNoOfUsers: ' + $scope.maxNoOfUsers);			
 		return $scope.maxNoOfUsers;
 		
 	}
-	
 
 
 }]);

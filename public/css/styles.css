@@ -62,8 +62,8 @@ h1 {
 }
 
 .rwd-table {
-    background: #34495E;
-    color: #fff;
+    background: white;
+    color: black;
     border-radius: .4em;
     overflow: hidden;
 }
@@ -79,7 +79,7 @@ h1 {
     }
 }
 .rwd-table th, .rwd-table td:before, label {
-    color: #dd5;
+    color: black;
 }
 
 label {

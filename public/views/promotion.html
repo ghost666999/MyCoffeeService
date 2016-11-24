@@ -1,221 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coffee Service</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <style type="text/css" id="page-css">
-      .float-right {
-        float: right;
-      }
-      .inline-block {
-        display: inline-block;
-      }
-    </style>
-    <script type="text/javascript">
-      var promotionCount = 0;
-      var promotionsList = [];
-      $(document).ready(function() {
-
-      })
-
-      function addContent() {
-        var title = $('#title').val();
-        var details = $('#details').val();
-
-        if (!title) {
-          $('#title').focus();
-          return;
-        }
-        if (!details) {
-          $('#details').focus();
-          return;
-        }
-        createContent(title, details);
-      }
-
-      function createContent(title, details) {
-        var promotion = "<div class=\"panel panel-default\" id=\"panel"+promotionCount+"\">";
-        promotion = promotion + "<div class=\"panel-heading\">";
-        promotion = promotion + "<h5 class=\"panel-title\">";
-        promotion = promotion + "<a class=\"inline-block\" data-toggle=\"collapse\" data-parent=\"#promotions-list\" href=\"#"+promotionCount+"\"> <div id=\"promotion"+promotionCount+"title\">";
-        promotion = promotion + title + "</div></a><button class=\"btn btn-default btn-xs inline-block float-right\" onclick=\"removeContent('panel"+promotionCount+"')\">-</button></h5>";
-        promotion = promotion + "</div>";
-        promotion = promotion + "<div id=\""+promotionCount+"\" class=\"panel-collapse collapse\">";
-        promotion = promotion + "<div class=\"panel-body\" style=\"padding:0px\">"+"<div data-spy=\"scroll\"  data-target=\"#navbarExample\" data-offset=\"0\" class=\"scrollspy-example\" style=\"padding:10px;height:100%;width:100%;border:0px solid black;\" id=\"job"+promotionCount+"body\">";
-        promotion = promotion + details + "</div>";
-        promotion = promotion + "</div></div>"
-        promotion = promotion + "</div>";
-        $("#promotions").append(promotion);
-
-        $("#promotions").sortable({
-            connectWith: ".col-md-12.win"
-        }).disableSelection();
-        promotionCount += 1;
-      }
-
-      function removeContent(id) {
-        $("#"+id).remove();
-      }
+<!-- Page Heading/Breadcrumbs -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">New Promotion
+            <small>promote now!</small>
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
 
 
-    </script>
+<form>
+  <div class="input-group">
+    <span class="input-group-addon">Title</span>
+    <input type="text" class="form-control" placeholder="Promotion title" id="title" required="required">
+  </div>
+  <h5>
+    <div class="form-group">
+      <label for="Details">
+        <span class="glyphicon glyphicon-edit">Details</span>
+      </label>
+      <textarea class="form-control" rows="5" placeholder="Promotion Details" id="details"></textarea>
+    </div>
+  </h5>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-primary" onclick="addContent();return false;">Add</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+    <button type="button" class="btn btn-primary">Save</button>
+  </div>
+</form>
+<br>
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <span class="glyphicon glyphicon-list">Promotions</span>
+  </div>
+  <div class = "panel-body" style="padding: 10px">
+    <div id="promotions" class="col-md-12 win" ></div>
 
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><span class = "glyphicon glyphicon-leaf"></span> Coffee Service</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.html">404</a>
-                            </li>
-                            <li class="active">
-                                <a href="pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+  </div>
+</div>
 
-    <!-- Page Content -->
-    <div class="container">
-
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">New Promotion
-                    <small>promote now!</small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Content Row -->
-        <form>
-          <div class="input-group">
-            <span class="input-group-addon">Title</span>
-            <input type="text" class="form-control" placeholder="Promotion title" id="title" required="required">
-          </div>
-          <h5>
-            <div class="form-group">
-              <label for="Details">
-                <span class="glyphicon glyphicon-edit">Details</span>
-              </label>
-              <textarea class="form-control" rows="5" placeholder="Promotion Details" id="details"></textarea>
-            </div>
-          </h5>
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary" onclick="addContent();return false;">Add</button>
-            <button type="reset" class="btn btn-primary">Reset</button>
-            <button type="button" class="btn btn-primary">Save</button>
-          </div>
-        </form>
-        <br>
-        <div class = "panel panel-default">
-          <div class = "panel-heading">
-            <span class="glyphicon glyphicon-list">Promotions</span>
-          </div>
-          <div class = "panel-body" style="padding: 10px">
-            <div id="promotions" class="col-md-12 win" ></div>
-            
-          </div>
-        </div>
-                
-        <hr>
-
-        <footer>
-          <div class="row">
-            <div class="col-lg-12">
-              <p>Copyright &copy; News Corp</p>
-            </div>
-          </div>
-        </footer>
-      </div>
-  </body>
-</html>

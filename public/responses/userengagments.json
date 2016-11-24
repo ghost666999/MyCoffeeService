@@ -19,7 +19,7 @@
 			"avgTime": "5"
 		}
 	],
-	"chartDataWeekly": [
+	"chartDataDays": [
 		{"legendX": "Monday", "noOfUsers": "3"},
 		{"legendX": "Tuesday", "noOfUsers": "5"},
 		{"legendX": "Wednesday", "noOfUsers": "7"},
@@ -28,16 +28,29 @@
 		{"legendX": "Saturday", "noOfUsers": "2"},
 		{"legendX": "Sunday", "noOfUsers": "1"}		
 	],
+	"chartDataWeekly": [
+	  {"legendX": "JAN(week-1)", "noOfUsers": "33"},
+	  {"legendX": "JAN(week-2)", "noOfUsers": "52"},
+	  {"legendX": "JAN(week-3)", "noOfUsers": "71"},
+	  {"legendX": "JAN(week-4)", "noOfUsers": "45"}
+	],
 	"chartDataMonthly": [
-		{"legendX": "Week1", "noOfUsers": "10"},
-		{"legendX": "Week2", "noOfUsers": "28"},
-		{"legendX": "Week3", "noOfUsers": "45"},
-		{"legendX": "Week4", "noOfUsers": "60"}	
+	  {"legendX": "JAN", "noOfUsers": "100"},
+	  {"legendX": "FEB", "noOfUsers": "280"},
+	  {"legendX": "MAR", "noOfUsers": "459"},
+	  {"legendX": "APR", "noOfUsers": "160"},
+	  {"legendX": "MAY", "noOfUsers": "100"},
+	  {"legendX": "JUN", "noOfUsers": "370"},
+	  {"legendX": "JUL", "noOfUsers": "290"},
+	  {"legendX": "AUG", "noOfUsers": "180"},
+	  {"legendX": "SEP", "noOfUsers": "90"},
+	  {"legendX": "OCT", "noOfUsers": "159"},
+	  {"legendX": "NOV", "noOfUsers": "263"},
+	  {"legendX": "DEC", "noOfUsers": "123"}
 	],
 	"chartDataYearly": [
-		{"legendX": "JAN", "noOfUsers": "100"},
-		{"legendX": "FEB", "noOfUsers": "280"},
-		{"legendX": "MAR", "noOfUsers": "459"},
-		{"legendX": "APR", "noOfUsers": "160"}	
+	  {"legendX": "2014", "noOfUsers": "1000"},
+	  {"legendX": "2015", "noOfUsers": "2800"},
+	  {"legendX": "2016", "noOfUsers": "459"}
 	]
 }

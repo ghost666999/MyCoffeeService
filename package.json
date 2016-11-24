@@ -1,0 +1,22 @@
+{
+  "name": "mycoffeeshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://stuartchiu12@github.com/ghost666999/MyCoffeeService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghost666999/MyCoffeeService/issues"
+  },
+  "homepage": "https://github.com/ghost666999/MyCoffeeService#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

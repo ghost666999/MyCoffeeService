@@ -1,8 +1,8 @@
     <h3>add new product</h3>
     <fieldset>
-       <label>Product name</label><input type="text"><br/>
+       <label>Product name</label><input type="text" ng-model="product.productName"><br/>
        <label>Product image</label><input type="file"><br/>
-       <label>price</label><input type="number"><br/><label>size</label><select>
+       <label>price</label><input type="number" ng-model="product.price"><br/><label>size</label><select ng-model="product.size">
            <option>L</option>
            <option>S</option>
            <option>M</option>
@@ -10,4 +10,4 @@
        </select>
     <br/>
     </fieldset>
-<button>create new product</button>
+<button ng-click="addNewProduct()">create new product</button>

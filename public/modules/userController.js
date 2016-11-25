@@ -90,6 +90,14 @@ userControllers.controller('userController', [ '$route','$scope', '$location',  
         window.products =  $scope.products;
         $location.path('/coffeelist');
     };
+    
+    $scope.loadfile=function (target) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            $scope.product.src = reader.result;
+        };
+        reader.readAsDataURL(target.files[0]);
+    }
 
 }]);
 

@@ -13,7 +13,7 @@
           </td>
           <td class="col-sm-6">
             <div class="form-group">
-              <input type="text">
+              <input type="text" ng-model="product.productName">
             </div>
           </td>
         </tr>
@@ -23,7 +23,7 @@
           </td>
           <td class="col-sm-6">
             <div class="form-group">
-              <input type="file">
+              <input type="file" ng-model="product.src">
             </div>
           </td>
         </tr>
@@ -33,7 +33,7 @@
           </td>
           <td class="col-sm-6">
             <div class="form-group">
-             <input type="number">
+             <input type="number" ng-model="product.price">
             </div>
           </td>
         </tr>
@@ -42,7 +42,7 @@
             <div><span class="glyphicon glyphicon glyphicon glyphicon-plus-sign"></span> Size : </div>
           </td>
           <td class="col-sm-6">
-            <select>
+            <select ng-model="product.size">
               <option>L</option>
               <option>S</option>
               <option>M</option>
@@ -52,5 +52,5 @@
         </tr>
         
       </table>
-      <button class="btn btn-lg btn-primary">create new product</button>
+      <button class="btn btn-small btn-primary" ng-click="addNewProduct()">create new product</button>
     </div>

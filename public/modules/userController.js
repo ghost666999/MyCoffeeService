@@ -1,4 +1,4 @@
-userControllers.controller('userController', [ '$scope', '$location',  '$http', function ($scope, $location, $http) {
+userControllers.controller('userController', [ '$route','$scope', '$location',  '$http', function ($route,$scope, $location, $http) {
 
 	console.log("userController loaded");
 	var self = this;
@@ -79,6 +79,17 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 		
 	}
 
+
+    $scope.products = window.products? window.products : [{productName:'latte',src:'image/coffee.jpg',price:3.7,size:'L'},
+        {productName:'cappuccino',src:'image/cappa.jpg',price:3.0,size:'S'},
+        {productName:'banana cake',src:'image/banana_cake.jpg',price:5.5,size:''}
+    ];
+    $scope.product = {};
+    $scope.addNewProduct = function () {
+        $scope.products.push($scope.product);
+        window.products =  $scope.products;
+        $location.path('/coffeelist');
+    };
 
 }]);
 

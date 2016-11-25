@@ -1,39 +1,37 @@
+<h1 class="page-header">User Analysis</h1>
 <div class="row">
 	<div class="col-sm-12">
-		<h2>User Analysis</h2>
-	</div>
-	<div class="col-sm-12">
-	<table class="table table-responsive table-bordered">
-		<tr>
-			<th></th>
-			<th ng-repeat='data in userResponse.data'>
-				{{data.timeSpan}} days
-			</th>
-		</tr>
-		<tr>
-			<td>No of Users</td>
-			<td ng-repeat='data in userResponse.data'>
-				{{data.noOfUsers}}
-			</td>
-		</tr>
-		<tr>
-			<td>Avg time spent per user</td>
-			<td ng-repeat='data in userResponse.data'>
-				{{data.avgTime}} min(s)
-			</td>
-		</tr>
-		<tr>
-			<td>Regular / Repeat customers</td>
-			<td ng-repeat='data in userResponse.data'>
-				{{data.repeatUsers}}
-			</td>
-		</tr>
-	</table>
+        <table class="table table-responsive table-bordered">
+            <tr>
+                <th></th>
+                <th ng-repeat='data in userResponse.data'>
+                    {{data.timeSpan}} days
+                </th>
+            </tr>
+            <tr>
+                <td>No of Users</td>
+                <td ng-repeat='data in userResponse.data'>
+                    {{data.noOfUsers}}
+                </td>
+            </tr>
+            <tr>
+                <td>Avg time spent per user</td>
+                <td ng-repeat='data in userResponse.data'>
+                    {{data.avgTime}} min(s)
+                </td>
+            </tr>
+            <tr>
+                <td>Regular / Repeat customers</td>
+                <td ng-repeat='data in userResponse.data'>
+                    {{data.repeatUsers}}
+                </td>
+            </tr>
+        </table>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-xs-8"><h2>Total user visits ({{selectedChartType}})</h2></div>
+	<div class="col-xs-8"><h4>Total user visits ({{selectedChartType}})</h4></div>
 	<div class="col-xs-4 text-right">
 		<select class="form-control" ng-model="selectedChartType" ng-change="updateChart()">
 		  <option value="days">Days</option>

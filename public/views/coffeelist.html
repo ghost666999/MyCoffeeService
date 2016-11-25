@@ -1,15 +1,20 @@
+ <h1 class="page-header">Product management
+     <small>
+        <a href="#!/addcoffee" class="btn btn-small btn-primary" style="float: right;">Add new product</a>
+    </small>
+ </h1>
 
-<h2>Product management</h2>
-<table class="rwd-table table table-responsive table-bordered">
-    <tr><th>product name</th><th>image</th><th>price</th><th>size</th><th>edit</th><th>remove</th>
-    </tr>
-   <tr ng-repeat="p in products track by $index">
-       <td>{{p.productName}}</td>
-       <td><img ng-if="p.src" ng-src="{{p.src}}" style="height: 100px;width: 100px;"></td>
-       <td>{{p.price}}</td>
-       <td>{{p.size}}</td>
-       <td><input type="button" class="btn btn-small" value="edit"></td>
-       <td><input type="button" class="btn btn-small" value="remove" ng-click="products.splice($index,1)"></td>
-   </tr>
-</table>
-<a href="#!/addcoffee" class="btn btn-small btn-primary" >Add new product</a>
+    <table class="table table-responsive table-striped col-sm-12">
+        <tr><th>Product</th><th>Image</th><th>Price</th><th>Size</th><th>Edit/Remove</th>
+        </tr>
+       <tr ng-repeat="p in products track by $index">
+           <td>{{p.productName}}</td>
+           <td><img ng-if="p.src" ng-src="{{p.src}}" style="height: 100px;width: 100px;"></td>
+           <td>{{p.price}}</td>
+           <td>{{p.size}}</td>
+           <td>
+               <input type="button" class="btn btn-small" value="edit">
+               <input type="button" class="btn btn-small" value="remove" ng-click="products.splice($index,1)">
+           </td>
+       </tr>
+    </table>

@@ -1,25 +1,6 @@
-
-<!-- Page Heading/Breadcrumbs -->
-
- <style type="text/css" id="page-css">
-      .float-right {
-        float: right;
-      }
-      .inline-block {
-        display: inline-block;
-      }
-</style>
-
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">New Promotion
-            <small>promote now!</small>
-        </h1>
-    </div>
-</div>
-<!-- /.row -->
-
-
+<h1 class="page-header">New Promotion
+    <small>promote now!</small>
+</h1>
 <form>
   <div class="input-group">
     <span class="input-group-addon">Title</span>
@@ -28,7 +9,8 @@
   <h5>
     <div class="form-group">
       <label for="Details">
-        <span class="glyphicon glyphicon-edit">Details</span>
+        <span class="glyphicon glyphicon-edit"></span>
+        <h4 class="inline-block">Details</h4>
       </label>
       <textarea class="form-control" rows="5" ng-model="promotion.desc" placeholder="Promotion Details" id="details"></textarea>
     </div>
@@ -42,10 +24,12 @@
 <br>
 <div class = "panel panel-default">
   <div class = "panel-heading">
-    <span class="glyphicon glyphicon-list">Promotions</span>
+      <span class="glyphicon glyphicon-list"></span>
+      <h4 class="inline-block">Promotions</h4>
   </div>
   <div class = "panel-body" style="padding: 10px">
     <div id="promotions" class="col-md-12 win" >
+
       
 
 <div ng-repeat="promotion in promotions track by $index">
@@ -78,8 +62,7 @@
 
 
 
-
-
+    </div>
 
   </div>
 </div>

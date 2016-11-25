@@ -1,14 +1,15 @@
 
 <h2>Product management</h2>
 <table class="rwd-table table table-responsive table-bordered">
-    <tr><th>product name</th><th>image</th><th>price</th><th>size</th><th>edit</th>
+    <tr><th>product name</th><th>image</th><th>price</th><th>size</th><th>edit</th><th>remove</th>
     </tr>
    <tr ng-repeat="p in products">
        <td>{{p.productName}}</td>
-       <td><img ng-src="{{p.src}}" style="height: 100px;width: 100px;"></td>
+       <td><img ng-if="p.src" ng-src="{{p.src}}" style="height: 100px;width: 100px;"></td>
        <td>{{p.price}}</td>
        <td>{{p.size}}</td>
        <td><input type="button" class="btn btn-small" value="edit"></td>
+       <td><input type="button" class="btn btn-small" value="remove"></td>
    </tr>
 </table>
-<a href="#!/addcoffee">add new product type</a>
+<a href="#!/addcoffee" >add new product type</a>

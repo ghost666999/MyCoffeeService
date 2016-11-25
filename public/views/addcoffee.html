@@ -1,13 +1,56 @@
-    <h3>add new product</h3>
-    <fieldset>
-       <label>Product name</label><input type="text" ng-model="product.productName"><br/>
-       <label>Product image</label><input type="file"><br/>
-       <label>price</label><input type="number" ng-model="product.price"><br/><label>size</label><select ng-model="product.size">
-           <option>L</option>
-           <option>S</option>
-           <option>M</option>
-           <option>XL</option>
-       </select>
-    <br/>
-    </fieldset>
-<button ng-click="addNewProduct()">create new product</button>
+    
+    <div class="container">
+      <table>
+        <tr>
+          <td class="col-sm-7">
+            <h2>Add New Product</h2>
+          </td>
+          
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <div><span class="glyphicon glyphicon-leaf"></span> Product name : </div>
+          </td>
+          <td class="col-sm-6">
+            <div class="form-group">
+              <input type="text" ng-model="product.productName">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <div><span class="glyphicon glyphicon-folder-open"></span> Product image : </div>
+          </td>
+          <td class="col-sm-6">
+            <div class="form-group">
+              <input type="file" ng-model="product.src">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <div><span class="glyphicon glyphicon glyphicon-usd"></span> Price : </div>
+          </td>
+          <td class="col-sm-6">
+            <div class="form-group">
+             <input type="number" ng-model="product.price">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <div><span class="glyphicon glyphicon glyphicon glyphicon-plus-sign"></span> Size : </div>
+          </td>
+          <td class="col-sm-6">
+            <select ng-model="product.size">
+              <option>L</option>
+              <option>S</option>
+              <option>M</option>
+              <option>XL</option>
+            </select>
+          </td>
+        </tr>
+        
+      </table>
+      <button class="btn btn-lg btn-primary" ng-click="addNewProduct()">create new product</button>
+    </div>

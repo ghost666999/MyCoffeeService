@@ -12,6 +12,10 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 	$scope.maxChartHeight = 0;
 	
 	$scope.selectedChartType = "days";
+
+	$scope.promotion = {};
+
+	$scope.promotions = [];
 	
 	$scope.getBarHeight = function (noOfUsers) {
 		var height = noOfUsers/$scope.maxNoOfUsers * 95;
@@ -40,6 +44,23 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 
         self.getMaxNo(chartData);
 		$scope.userResponse.chartData = chartData;
+	}
+
+	$scope.addPromotions = function () {
+		$scope.promotions.push({
+			"header": $scope.promotion.header,
+			"desc": $scope.promotion.desc,
+			"className": "collapse"
+		})
+	}
+
+	$scope.showPromotion = function (index) {
+		var className = $scope.promotions[index].className === "active" ? "collapse" : "active";
+		$scope.promotions[index].className = className;
+	}
+
+	$scope.removePromotion = function (index) {
+		$scope.promotions.splice(index, 1);
 	}
 	
 	

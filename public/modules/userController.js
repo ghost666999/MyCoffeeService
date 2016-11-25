@@ -15,7 +15,13 @@ userControllers.controller('userController', [ '$route','$scope', '$location',  
 
 	$scope.promotion = {};
 
-	$scope.promotions = [];
+	$scope.promotions = [
+        {
+            "header": "Buy a breakfast for $10 and get one free coffee!",
+            "desc": "Buy a breakfast for $10 and get one free coffee and enjoy FREE premium content",
+            "className": "collapse"
+        }
+    ];
 	
 	$scope.getBarHeight = function (noOfUsers) {
 		var height = noOfUsers/$scope.maxNoOfUsers * 95;

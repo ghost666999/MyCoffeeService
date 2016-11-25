@@ -3,8 +3,8 @@
 	<div class="col-sm-12">
         <table class="table table-responsive table-bordered">
             <tr>
-                <th></th>
-                <th ng-repeat='data in userResponse.data'>
+                <th class="info"></th>
+                <th ng-repeat='data in userResponse.data' class="info">
                     {{data.timeSpan}} days
                 </th>
             </tr>
@@ -29,6 +29,23 @@
         </table>
 	</div>
 </div>
+
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Usage peak time</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" ng-model="userResponse.peakTime">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Most Visited Masthead</label>
+        <div class="col-sm-10">
+            <input class="form-control disabled" type="text" ng-model="userResponse.mastheadName">
+        </div>
+    </div>
+
+</form>
 
 <div class="row">
 	<div class="col-xs-8"><h4>Total user visits ({{selectedChartType}})</h4></div>

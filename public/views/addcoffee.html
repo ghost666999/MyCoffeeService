@@ -1,13 +1,49 @@
-    <h3>add new product</h3>
-    <fieldset>
-       <label>Product name</label><input type="text"><br/>
-       <label>Product image</label><input type="file"><br/>
-       <label>price</label><input type="number"><br/><label>size</label><select>
-           <option>L</option>
-           <option>S</option>
-           <option>M</option>
-           <option>XL</option>
-       </select>
-    <br/>
-    </fieldset>
-<button>create new product</button>
+    <h2>Add New Product</h2>
+    <div class="container">
+      <table>
+        <tr>
+          <td class="col-sm-3">
+            <label><span class="glyphicon glyphicon-leaf"></span> Product name : </label>
+          </td>
+          <td class="col-sm-6">
+            <div class="form-group">
+              <input type="text">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <label><span class="glyphicon glyphicon-folder-open"></span> Product image : </label>
+          </td>
+          <td class="col-sm-6">
+            <div class="form-group">
+              <input type="file">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <label><span class="glyphicon glyphicon glyphicon-usd"></span> Price : </label>
+          </td>
+          <td class="col-sm-6">
+            <div class="form-group">
+             <input type="number">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">
+            <label><span class="glyphicon glyphicon glyphicon glyphicon-plus-sign"></span> Size : </label>
+          </td>
+          <td class="col-sm-6">
+            <select>
+              <option>L</option>
+              <option>S</option>
+              <option>M</option>
+              <option>XL</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+<button class="btn btn-lg btn-primary">create new product</button>

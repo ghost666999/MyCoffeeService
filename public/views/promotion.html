@@ -1,40 +1,22 @@
-
-<!-- Page Heading/Breadcrumbs -->
-
- <style type="text/css" id="page-css">
-      .float-right {
-        float: right;
-      }
-      .inline-block {
-        display: inline-block;
-      }
-</style>
-
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">New Promotion
-            <small>promote now!</small>
-        </h1>
-    </div>
-</div>
-<!-- /.row -->
-
-
+<h1 class="page-header">New Promotion
+    <small>promote now!</small>
+</h1>
 <form>
   <div class="input-group">
     <span class="input-group-addon">Title</span>
-    <input type="text" class="form-control" placeholder="Promotion title" id="title" required="required">
+    <input type="text" class="form-control" placeholder="Promotion title" id="title" ng-model="promotion.header" required="required">
   </div>
   <h5>
     <div class="form-group">
       <label for="Details">
-        <span class="glyphicon glyphicon-edit">Details</span>
+        <span class="glyphicon glyphicon-edit"></span>
+        <h4 class="inline-block">Details</h4>
       </label>
-      <textarea class="form-control" rows="5" placeholder="Promotion Details" id="details"></textarea>
+      <textarea class="form-control" rows="5" ng-model="promotion.desc" placeholder="Promotion Details" id="details"></textarea>
     </div>
   </h5>
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary" onclick="addContent();return false;">Add</button>
+    <button type="button" class="btn btn-primary" ng-click="addPromotions();">Add</button>
     <button type="reset" class="btn btn-primary">Reset</button>
     <button type="button" class="btn btn-primary">Save</button>
   </div>
@@ -42,10 +24,45 @@
 <br>
 <div class = "panel panel-default">
   <div class = "panel-heading">
-    <span class="glyphicon glyphicon-list">Promotions</span>
+      <span class="glyphicon glyphicon-list"></span>
+      <h4 class="inline-block">Promotions</h4>
   </div>
   <div class = "panel-body" style="padding: 10px">
-    <div id="promotions" class="col-md-12 win" ></div>
+    <div id="promotions" class="col-md-12 win" >
+
+      
+
+<div ng-repeat="promotion in promotions track by $index">
+  <div class="panel panel-default" id="panel{{$index}}">
+    <div class="panel-heading">
+      <h5 class="panel-title" ng-click="showPromotion($index)">
+        <a class="inline-block" data-toggle="collapse" data-parent="#promotions-list">
+          <div id="promotion{{$index}}title">{{promotion.header}}</div>
+          </a>
+          <button class="btn btn-default btn-xs inline-block float-right" ng-click="promotions.splice($index, 1)">-</button>
+      </h5>
+    </div>
+    <div id="{{$index}}" class="panel-collapse {{promotion.className}}">
+      <div class="panel-body" style="padding:0px">
+        <div data-spy="scroll"  data-target="#navbarExample" class="scrollspy-example" style="padding:10px;height:100%;width:100%;border:0px solid black;" id="job0body">{{promotion.desc}}</div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+    </div>
 
   </div>
 </div>

@@ -55,7 +55,7 @@
         <a class="inline-block" data-toggle="collapse" data-parent="#promotions-list">
           <div id="promotion{{$index}}title">{{promotion.header}}</div>
           </a>
-          <button class="btn btn-default btn-xs inline-block float-right" ng-click="removePromotion($index)">-</button>
+          <button class="btn btn-default btn-xs inline-block float-right" ng-click="promotions.splice($index, 1)">-</button>
       </h5>
     </div>
     <div id="{{$index}}" class="panel-collapse {{promotion.className}}">

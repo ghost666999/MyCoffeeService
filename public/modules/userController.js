@@ -58,10 +58,6 @@ userControllers.controller('userController', [ '$scope', '$location',  '$http', 
 		var className = $scope.promotions[index].className === "active" ? "collapse" : "active";
 		$scope.promotions[index].className = className;
 	}
-
-	$scope.removePromotion = function (index) {
-		$scope.promotions.splice(index, 1);
-	}
 	
 	
 	$http.get('responses/userengagments.json').then(function(response) {
